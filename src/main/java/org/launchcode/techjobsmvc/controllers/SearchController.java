@@ -30,7 +30,6 @@ public class SearchController {
     @PostMapping("results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam(required = false) String searchTerm) {
         ArrayList<Job> jobs;
-        //TODO: Test that all with Ruby works
         if (searchType.equals("all") && (!searchTerm.isEmpty())) {
             jobs = JobData.findByValue(searchTerm);
         } else if (searchType.equals("all")) {
